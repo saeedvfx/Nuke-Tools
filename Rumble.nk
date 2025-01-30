@@ -1,0 +1,24 @@
+set cut_paste_input [stack 0]
+version 15.1 v1
+push $cut_paste_input
+NoOp {
+ name Rumble
+ note_font "Verdana Bold"
+ note_font_size 20
+ selected true
+ xpos -91
+ ypos -112
+ addUserKnob {20 User}
+ addUserKnob {3 seed l Seed}
+ seed 1
+ addUserKnob {7 speed l Speed}
+ speed 1
+ addUserKnob {7 range l Range R 0 50}
+ range 1
+ addUserKnob {7 pushup l "Push Up" R -50 50}
+ addUserKnob {26 "" +STARTLINE}
+ addUserKnob {16 Value l value}
+ Value {{(random(seed,frame*speed)*range)+pushup}}
+ addUserKnob {26 "" +STARTLINE}
+ addUserKnob {26 text l "" +STARTLINE T "Rumble 0.1 (c) Saeed Faridzadeh"}
+}
